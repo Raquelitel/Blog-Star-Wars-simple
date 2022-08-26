@@ -18,7 +18,7 @@ const Infocard = () => {
       <div className="row g-0">
         <div className="col-md-4 my-2 d-flex justify-content-center align-items-center">
           <img
-            src={require(`../../img/personaje-${id}.jpeg`).default}
+            src={require(`../../img/personajes/personaje-${id}.jpeg`).default}
             className="img-fluid rounded"
             alt="name"
           />

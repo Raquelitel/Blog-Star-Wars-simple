@@ -17,7 +17,6 @@ const Input = () => {
           }}
           value={store.filtrarItem.name}
         />
-
         {store.filtrarItem.length && (
           <div className="bg-white overflow-scroll opacity-50">
             {store.filtrarItem.map((personaje, i) => {
@@ -30,7 +29,6 @@ const Input = () => {
                   className="text-decoration-none text-black">
                   {personaje.name}
                   </Link>
-                
                 </p>
               );
             })}

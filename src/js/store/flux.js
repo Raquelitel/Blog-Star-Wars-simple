@@ -16,8 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		getPersonaje: () => {
 		  fetch("https://www.swapi.tech/api/people")
 			.then((response) => response.json())
-			.then((data) => setStore({personajes: data.results}) )
-			.catch((err) => console.error(err));
+			.then((data) => setStore({personajes: data.results},) )
+			.catch((err) => console.error(err))
 		},
 
 		getPersona: id => {
@@ -66,10 +66,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			  setStore({filtrarItem: search});
 		},
 
-		guardarLS: () => {
+/* 		guardarLS: () => {
 			const personajesLS = JSON.parse(localStorage.getItem("personajes")) ?? [];
 			setStore({personajes: personajesLS})
-		}
+		}  */
 
 	  },
 	};
