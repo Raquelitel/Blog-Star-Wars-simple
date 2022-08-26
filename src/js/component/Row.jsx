@@ -1,20 +1,26 @@
 import React, { useState } from "react";
-import Card from "../component/Card.jsx";
+import CardPersonajes from "./CardPersonajes.jsx";
 
-const Row = ({tituloRow}) => {
-  const [favorito, setFavorito] = useState(false)
+
+const Row = () => {
+
   
   return (
-    <div className="mt-4">
-      <h2 className="col-12 text-warning">{tituloRow}</h2>
-      <div className="col-4">
-        <Card 
-        favorito={favorito}
-        setFavorito={setFavorito}
-        tituloRow={tituloRow}/>
+    <div className="container">
+      <h2 className="col-12 text-warning m-2">Personajes</h2>
+      <div className="d-flex overflow-auto">
+        <CardPersonajes/>
+      </div>
+      <h2 className="col-12 text-warning m-2">Planetas</h2>
+      <div className="d-flex overflow-auto">
+        <CardPersonajes/>
       </div>
     </div>
   );
 };
 
 export default Row;
+
+// d-flex overflow-auto
+ // "row row-cols-2 row-cols-md-4 row-col-lg justify-content-center">
+ 

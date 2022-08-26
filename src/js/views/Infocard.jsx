@@ -1,26 +1,34 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 const Infocard = () => {
-  const params = useParams();
-  console.log(params);
+  const {store, actions} = useContext(Context)
+
+  const {id} = useParams();
+
+   useEffect(() => {
+    actions.getPersona(id)
+  },[id])
+
   return (
-    <div className="container card border-0 mb-3">
+    <div 
+    key={id}
+    className="container card border-0 mb-3">
       <div className="row g-0">
-        <div className="col-md-4">
+        <div className="col-md-4 my-2 d-flex justify-content-center align-items-center">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/640px-Star_Wars_Logo.svg.png"
-            className="img-fluid rounded-start"
+            src={require(`../../img/personaje-${id}.jpeg`).default}
+            className="img-fluid rounded"
             alt="name"
           />
         </div>
         <div className="col-md-8 text-center">
           <div className="card-body">
-            <h5 className="card-title text-uppercase">nombre</h5>
+            <h5 className="card-title text-uppercase">{store.persona.name}</h5>
             <p className="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, saepe exercitationem! Suscipit tempora, perferendis quibusdam deserunt sit velit alias explicabo nostrum accusamus exercitationem obcaecati earum quos nam soluta nisi mollitia?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, saepe exercitationem! Suscipit tempora, perferendis quibusdam deserunt sit velit alias explicabo nostrum accusamus exercitationem obcaecati earum quos nam soluta nisi mollitia?
             </p>
             <Link to="/">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
@@ -33,27 +41,27 @@ const Infocard = () => {
       <div className="container row border-top border-danger mt-4 text-capitalize">
         <div className="col-2 text-danger text-center">
           <p>nombre</p>
-          <p>luck</p>
+          <p>{store.persona.name}</p>
         </div>
         <div className="col-2 text-danger text-center">
-          <p>Nombre</p>
-          <p>luck</p>
+          <p>Género</p>
+          <p>{store.persona.gender}</p>
         </div>
         <div className="col-2 text-danger text-center">
-          <p>Nombre</p>
-          <p>luck</p>
+          <p>nacimiento</p>
+          <p>{store.persona.birth_year}</p>
         </div>
         <div className="col-2 text-danger text-center">
-          <p>Nombre</p>
-          <p>luck</p>
+          <p>ojos</p>
+          <p>{store.persona.eye_color}</p>
         </div>
         <div className="col-2 text-danger text-center">
-          <p>Nombre</p>
-          <p>luck</p>
+          <p>Altura</p>
+          <p>{store.persona.height}</p>
         </div>
         <div className="col-2 text-danger text-center">
-          <p>Nombre</p>
-          <p>luck</p>
+          <p>peso</p>
+          <p>{store.persona.mass}</p>
         </div>
       </div>
     </div>
