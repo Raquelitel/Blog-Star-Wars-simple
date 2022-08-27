@@ -30,11 +30,12 @@ return store.personajes.map(personaje => {
                 <div className="col-3 d-flex align-items-center">
                   <button
                     type="button"
-                    className={`btn ${store.isfavorito ? "btn-outline-warning" : ""}`}
+                    className="btn"
                     onClick={() => {actions.addFavoritos(personaje)}}
                   >
-                    {store.isfavorito ? <BsHeartFill /> : <BsHeart />}
+                    {store.favoritos.includes(personaje) ? <BsHeartFill /> : <BsHeart />}
                   </button>
+
                 </div>
               </div>
             </div>

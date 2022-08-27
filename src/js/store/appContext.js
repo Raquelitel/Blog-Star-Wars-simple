@@ -23,10 +23,36 @@ const injectContext = PassedComponent => {
 
 		useEffect(() => {
 
+/* 			state.actions.getPersonaje();
+			state.actions.getPlanetas(); */
 
-			state.actions.getPersonaje();
-			state.actions.getPlanetas();
-			// state.actions.guardarLS();
+			 if(localStorage.getItem("personajes")) {
+			 	state.actions.getPersonajesLS()
+			 } else {
+			 	state.actions.getPersonaje();	
+			 }
+			 if(localStorage.getItem("persona")) {
+				state.actions.getPersonaLS()
+			} else {
+				state.actions.getPersona();	
+			}
+			if(localStorage.getItem("planetas")) {
+				state.actions.getPlanetasLS()
+			} else {
+				state.actions.getPlanetas();	
+			}
+			if(localStorage.getItem("planeta")) {
+				state.actions.getPlanetaLS()
+			} else {
+				state.actions.getPlaneta();	
+			}
+
+
+/* 			 if(localStorage.getItem("planetas")) {
+
+			 }
+			 state.actions.getPlanetas(); */
+			
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime
