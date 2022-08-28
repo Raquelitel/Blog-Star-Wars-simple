@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
+
 const Infocard = () => {
   const {store, actions} = useContext(Context)
 
@@ -18,7 +19,7 @@ const Infocard = () => {
       <div className="row g-0">
         <div className="col-md-4 my-2 d-flex justify-content-center align-items-center">
           <img
-            src={require(`../../img/personajes/personaje-${id}.jpeg`).default}
+            src={`/personaje-${id}.jpeg`}
             className="img-fluid rounded"
             alt="name"
           />
