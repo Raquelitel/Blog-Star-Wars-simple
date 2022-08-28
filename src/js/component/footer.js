@@ -37,7 +37,7 @@ export const Footer = () => (
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+         Contacto
         </button>
       </div>
     </nav>
